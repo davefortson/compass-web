@@ -59,6 +59,11 @@ export default function Navbar() {
     []
   );
 
+  // Dynamic colors: white when over dark hero, dark when scrolled to white bg
+  const textColor = scrolled ? "#202020" : "#FFFFFF";
+  const mutedTextColor = scrolled ? "rgba(32,32,32,0.6)" : "rgba(255,255,255,0.6)";
+  const borderColor = scrolled ? "#D2D5D9" : "rgba(255,255,255,0.3)";
+
   return (
     <>
       <nav
@@ -70,19 +75,9 @@ export default function Navbar() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-20 items-center justify-between">
-            {/* Logo + "by Regen" */}
-            <div className="flex items-center gap-2 shrink-0">
-              <CompassLogo />
-              <span
-                className="text-sm tracking-wide"
-                style={{
-                  fontFamily: "'Mulish', sans-serif",
-                  color: "#202020",
-                  opacity: 0.6,
-                }}
-              >
-                by Regen
-              </span>
+            {/* Logo */}
+            <div className="flex items-center shrink-0">
+              <CompassLogo light={!scrolled} />
             </div>
 
             {/* Desktop Nav Links */}
@@ -92,12 +87,12 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   onClick={(e) => handleSmoothScroll(e, link.href)}
-                  className="uppercase tracking-widest text-sm font-medium transition-colors duration-200 hover:opacity-70"
+                  className="uppercase tracking-widest text-sm font-medium transition-colors duration-300 hover:opacity-70"
                   style={{
                     fontFamily: "'Mulish', sans-serif",
                     fontSize: "14px",
                     letterSpacing: "1px",
-                    color: "#202020",
+                    color: textColor,
                   }}
                 >
                   {link.label}
@@ -119,9 +114,9 @@ export default function Navbar() {
                     fontFamily: "'Mulish', sans-serif",
                     letterSpacing: "1px",
                     borderRadius: "2px",
-                    border: "1px solid #D2D5D9",
+                    border: `1px solid ${borderColor}`,
                     backgroundColor: "transparent",
-                    color: "#202020",
+                    color: textColor,
                     padding: "10px 20px",
                     fontSize: "13px",
                   }}
@@ -137,7 +132,7 @@ export default function Navbar() {
                   letterSpacing: "1px",
                   borderRadius: "2px",
                   background:
-                    "linear-gradient(204.4deg, var(--color-brand-teal, #2A9D8F), var(--color-brand-sage, #4FB573), var(--color-brand-cream, #E9C46A))",
+                    "linear-gradient(204.4deg, #2A9D8F, #4FB573, #E9C46A)",
                   padding: "10px 20px",
                   fontSize: "13px",
                   border: "none",
@@ -152,7 +147,7 @@ export default function Navbar() {
               className="lg:hidden flex items-center justify-center w-10 h-10 cursor-pointer"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-              style={{ color: "#202020" }}
+              style={{ color: textColor }}
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -223,7 +218,7 @@ export default function Navbar() {
                     letterSpacing: "1px",
                     borderRadius: "2px",
                     background:
-                      "linear-gradient(204.4deg, var(--color-brand-teal, #2A9D8F), var(--color-brand-sage, #4FB573), var(--color-brand-cream, #E9C46A))",
+                      "linear-gradient(204.4deg, #2A9D8F, #4FB573, #E9C46A)",
                     padding: "14px 24px",
                     fontSize: "14px",
                     border: "none",

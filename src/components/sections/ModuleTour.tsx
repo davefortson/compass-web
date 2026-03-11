@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import { SectionLabel } from "../ui/SectionLabel";
 import { Button } from "../ui/Button";
-import { CompassLogo } from "../ui/CompassLogo";
+import { ModulePreview } from "../ui/ModulePreview";
 import { MODULE_TABS } from "../../lib/constants";
 
 export default function ModuleTour() {
@@ -23,8 +23,8 @@ export default function ModuleTour() {
             See Compass in action
           </h2>
           <p className="font-body text-lg text-brand-muted max-w-[560px] mx-auto mt-4">
-            Explore each module. Every demo below was built for a real
-            organization &mdash; powered by Compass infrastructure.
+            Explore each module. See how Compass transforms impact data
+            for every use case &mdash; powered by the same core platform.
           </p>
         </div>
 
@@ -95,45 +95,11 @@ export default function ModuleTour() {
                 </a>
               </div>
 
-              {/* Right: Embed or protected overlay */}
+              {/* Right: Static module preview */}
               <div>
-                {currentModule.isProtected ? (
-                  <div className="rounded-[4px] border border-brand-border shadow-[0_4px_24px_rgba(0,0,0,0.12)] overflow-hidden bg-brand-dark flex flex-col items-center justify-center text-center px-8 h-[360px] lg:h-[520px]">
-                    <CompassLogo size={48} light />
-                    <h4 className="font-heading font-bold text-xl text-white mt-6">
-                      Live Demo &mdash; Request Access
-                    </h4>
-                    <p className="font-body text-sm text-white/60 mt-2 max-w-[320px]">
-                      This module demo is available on request. Get in touch to
-                      see it in action with your own data.
-                    </p>
-                    <div className="mt-6">
-                      <Button variant="ghost" href="#lead-capture">
-                        REQUEST ACCESS
-                      </Button>
-                    </div>
-                  </div>
-                ) : (
-                  <div>
-                    <div className="rounded-[4px] border border-brand-border shadow-[0_4px_24px_rgba(0,0,0,0.12)] overflow-hidden">
-                      <iframe
-                        src={currentModule.embedUrl}
-                        title={`${currentModule.label} demo`}
-                        className="w-full h-[360px] lg:h-[520px]"
-                        loading="lazy"
-                        allow="clipboard-read; clipboard-write"
-                        sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-                      />
-                    </div>
-                    {currentModule.credentials ? (
-                      <div className="mt-3 text-center">
-                        <span className="font-mono text-xs text-brand-grey bg-white border border-brand-border rounded-[2px] px-3 py-1.5 inline-block">
-                          {currentModule.credentials}
-                        </span>
-                      </div>
-                    ) : null}
-                  </div>
-                )}
+                <div className="rounded-[4px] border border-brand-border shadow-[0_4px_24px_rgba(0,0,0,0.12)] overflow-hidden h-[360px] lg:h-[520px]">
+                  <ModulePreview moduleId={currentModule.id} />
+                </div>
               </div>
             </motion.div>
           </AnimatePresence>

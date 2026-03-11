@@ -122,11 +122,11 @@ function StepNode({
             : { opacity: 0, y: 8, scale: 0.95 }
         }
         transition={{ duration: 0.2, ease: "easeOut" as const }}
-        className="absolute top-[110px] left-1/2 -translate-x-1/2 z-20 pointer-events-none w-[260px]"
+        className="absolute top-[140px] left-1/2 -translate-x-1/2 z-20 pointer-events-none w-[260px]"
       >
         <div
-          className="rounded-[4px] p-4"
-          style={{ background: "rgba(255,255,255,0.1)" }}
+          className="rounded-[4px] p-4 backdrop-blur-sm shadow-lg"
+          style={{ background: "rgba(20,20,20,0.95)", border: "1px solid rgba(79,181,115,0.3)" }}
         >
           <h4 className="font-heading font-bold text-sm text-white mb-1">
             {step.title}
