@@ -1,26 +1,88 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-brand-green: #4FB573;
+  --color-brand-dark: #202020;
+  --color-brand-teal: #527984;
+  --color-brand-sage: #79C6AA;
+  --color-brand-cream: #C4DAB5;
+  --color-brand-border: #D2D5D9;
+  --color-brand-muted: #545555;
+  --color-brand-grey: #848484;
+  --color-brand-surface: #FAFAFA;
+  --color-brand-white: #FFFFFF;
+
+  --font-heading: 'Mulish', sans-serif;
+  --font-body: 'Lato', sans-serif;
+  --font-mono: 'PT Mono', monospace;
+
+  --radius-btn: 2px;
+  --radius-card: 4px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  /* Core */
+  --color-green: #4FB573;
+  --color-dark: #202020;
+  --color-teal: #527984;
+  --color-sage: #79C6AA;
+  --color-cream: #C4DAB5;
+  --color-white: #FFFFFF;
+  --color-surface: #FAFAFA;
+  --color-border: #D2D5D9;
+  --color-muted: #545555;
+  --color-grey: #848484;
+
+  /* Brand gradient — ALWAYS 204.4deg */
+  --gradient-brand: linear-gradient(204.4deg, #527984 5.94%, #79C6AA 51.92%, #C4DAB5 97.89%);
+
+  /* Hero overlay */
+  --gradient-hero: linear-gradient(203.09deg, #202020 45.49%, #5E9078 92.1%);
+
+  /* Active glow */
+  --shadow-glow: rgba(79, 181, 115, 0.5) 0px 0px 25px;
+
+  /* Typography */
+  --font-heading: 'Mulish', sans-serif;
+  --font-body: 'Lato', sans-serif;
+  --font-mono: 'PT Mono', monospace;
+
+  /* Radii */
+  --radius-button: 2px;
+  --radius-card: 4px;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  background: var(--color-white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Topo texture bg */
+.topo-bg {
+  background-color: #202020;
+  background-image: url("data:image/svg+xml,%3Csvg width='600' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M300 50c80 0 150 40 190 100s50 130 30 200-70 130-140 160-150 20-210-20-100-110-110-190 20-160 80-200 80-50 160-50z' fill='none' stroke='%234FB573' stroke-opacity='0.08' stroke-width='1'/%3E%3Cpath d='M300 100c60 0 110 30 140 75s40 100 20 150-55 95-105 115-110 15-155-15-75-80-80-140 15-120 60-150 60-35 120-35z' fill='none' stroke='%234FB573' stroke-opacity='0.06' stroke-width='1'/%3E%3Cpath d='M300 150c40 0 75 20 95 50s25 65 15 100-35 65-70 80-75 10-105-10-50-55-55-95 10-80 40-100 40-25 80-25z' fill='none' stroke='%234FB573' stroke-opacity='0.04' stroke-width='1'/%3E%3Cpath d='M300 200c25 0 45 12 58 30s18 40 10 60-22 40-43 48-46 6-64-7-30-33-33-57 6-48 25-60 25-14 47-14z' fill='none' stroke='%234FB573' stroke-opacity='0.06' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 600px 600px;
+}
+
+/* Scrollbar styles */
+html {
+  scroll-behavior: smooth;
 }
