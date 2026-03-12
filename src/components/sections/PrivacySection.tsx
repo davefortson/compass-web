@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Lock, Database, Plug, Link2, Globe, FileText } from "lucide-react";
+import { Lock, Database, Plug, Link2, Globe, FileText, Target } from "lucide-react";
 import { SectionLabel } from "../ui/SectionLabel";
 import { Card } from "../ui/Card";
 
@@ -28,6 +28,8 @@ const TRUST_BADGES = [
   { label: "Regen Ledger Verified", icon: Link2 },
   { label: "SOC2-Ready Architecture", icon: Lock },
   { label: "TNFD / SBTi Compatible", icon: Globe },
+  { label: "GRI Compatible", icon: Target },
+  { label: "SDG-Aligned", icon: Globe },
   { label: "Audit-Ready Exports", icon: FileText },
 ];
 

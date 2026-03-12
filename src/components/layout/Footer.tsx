@@ -39,8 +39,11 @@ export default function Footer() {
         </div>
 
         {/* Tagline */}
-        <p className="font-body text-base text-white/40 mt-8">
-          Intelligence built for regeneration.
+        <p className="font-body text-sm text-white/50 mt-8">
+          Impact intelligence for every domain.
+        </p>
+        <p className="font-body text-base text-white/40 mt-1">
+          Intelligence built for impact that lasts.
         </p>
 
         {/* Divider */}

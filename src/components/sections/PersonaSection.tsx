@@ -23,6 +23,15 @@ function PersonaContent({
 
   return (
     <div>
+      {persona.roleLine && (
+        <p
+          className="font-body text-sm text-brand-green mb-3 tracking-wide"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
+          {persona.roleLine}
+        </p>
+      )}
+
       {Icon && (
         <div className="mb-4">
           <Icon size={32} className="text-brand-green" strokeWidth={2} />

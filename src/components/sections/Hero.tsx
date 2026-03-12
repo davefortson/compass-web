@@ -459,10 +459,22 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 w-full py-24 lg:py-0">
           {/* ── Left Column (60%) ── */}
           <div className="lg:col-span-3 flex flex-col justify-center">
-            <motion.div
+            {/* ── Eyebrow: who it's for ── */}
+            <motion.p
               initial={{ opacity: 0, y: 12 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
               transition={{ duration: 0.5, delay: 0.1 }}
+              className="font-body text-base tracking-wide"
+              style={{ color: "#79C6AA" }}
+            >
+              Built for teams that run on impact data
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mt-3"
             >
               <SectionLabel light>IMPACT INTELLIGENCE PLATFORM</SectionLabel>
             </motion.div>
@@ -496,6 +508,21 @@ export function Hero() {
               ))}
             </h1>
 
+            {/* ── Problem statement ── */}
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={
+                isInView
+                  ? { opacity: 1, y: 0 }
+                  : { opacity: 0, y: 16 }
+              }
+              transition={{ duration: 0.5, delay: 1.0 }}
+              className="mt-5 text-lg font-body font-semibold text-white/90 max-w-xl"
+            >
+              Most impact data is scattered, unstructured, and impossible to
+              verify. Compass fixes that.
+            </motion.p>
+
             {/* ── Body copy ── */}
             <motion.p
               initial={{ opacity: 0, y: 16 }}
@@ -504,8 +531,8 @@ export function Hero() {
                   ? { opacity: 1, y: 0 }
                   : { opacity: 0, y: 16 }
               }
-              transition={{ duration: 0.5, delay: 1.1 }}
-              className="mt-6 text-xl max-w-xl"
+              transition={{ duration: 0.5, delay: 1.15 }}
+              className="mt-4 text-xl max-w-xl"
               style={{
                 color: "#C4DAB5",
                 fontFamily: "var(--font-body)",
@@ -513,8 +540,9 @@ export function Hero() {
               }}
             >
               Compass is purpose-built for impact claims. Ingest, verify, and
-              organize your ecological and social data &mdash; then deploy it
-              with AI tools that work the way your team thinks.
+              organize your impact data &mdash; from ecological monitoring to
+              social outcomes &mdash; then deploy it with AI tools that work
+              the way your team thinks.
             </motion.p>
 
             {/* ── CTAs ── */}

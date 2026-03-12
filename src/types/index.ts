@@ -22,6 +22,7 @@ export interface PersonaData {
   id: string;
   icon: string;
   label: string;
+  roleLine?: string;
   headline: string;
   body: string;
   modules: string[];

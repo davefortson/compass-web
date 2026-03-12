@@ -47,7 +47,7 @@ export default function ProblemSection() {
     <section
       id="problem"
       ref={sectionRef}
-      className="bg-brand-surface py-[120px]"
+      className="bg-brand-surface pt-16 pb-[120px]"
     >
       <div className="mx-auto max-w-7xl px-6">
         <motion.div

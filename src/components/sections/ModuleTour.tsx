@@ -23,8 +23,8 @@ export default function ModuleTour() {
             See Compass in action
           </h2>
           <p className="font-body text-lg text-brand-muted max-w-[560px] mx-auto mt-4">
-            Explore each module. See how Compass transforms impact data
-            for every use case &mdash; powered by the same core platform.
+            Examples shown across ecological portfolios &mdash; Compass works
+            across all impact domains.
           </p>
         </div>
 

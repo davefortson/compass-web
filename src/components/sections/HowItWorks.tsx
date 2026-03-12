@@ -48,7 +48,7 @@ const STEPS = [
     label: "DEPLOY",
     icon: Rocket,
     title: "Reports & Revenue",
-    body: "Generate reports, share verified data with stakeholders, access nature markets, and tell your impact story.",
+    body: "Generate reports, share verified data with stakeholders, unlock market opportunities, and tell your impact story.",
   },
 ];
 
@@ -252,6 +252,16 @@ export default function HowItWorks() {
           <h2 className="font-heading font-black text-[42px] text-white leading-tight mt-4">
             One platform. From raw data to trusted claims.
           </h2>
+
+          <p
+            className="text-lg text-brand-cream max-w-[620px] mx-auto mt-5 leading-relaxed"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            No more stitching together spreadsheets, registries, and one-off
+            reports. Compass gives every person on your team &mdash; field
+            staff, analysts, funders &mdash; a single, verified source of
+            truth.
+          </p>
         </motion.div>
 
         <div ref={diagramRef} className="mt-20">

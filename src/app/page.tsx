@@ -3,6 +3,7 @@ import { Hero } from "@/components/sections/Hero";
 import TrustBar from "@/components/sections/TrustBar";
 import ProblemSection from "@/components/sections/ProblemSection";
 import HowItWorks from "@/components/sections/HowItWorks";
+import WhyCompass from "@/components/sections/WhyCompass";
 import FeaturesModules from "@/components/sections/FeaturesModules";
 import ModuleTour from "@/components/sections/ModuleTour";
 import PersonaSection from "@/components/sections/PersonaSection";
@@ -15,13 +16,14 @@ export default function Home() {
     <main>
       <Navbar />
       <Hero />
-      <TrustBar />
       <ProblemSection />
       <HowItWorks />
+      <WhyCompass />
       <FeaturesModules />
       <ModuleTour />
       <PersonaSection />
       <PrivacySection />
+      <TrustBar />
       <LeadCapture />
       <Footer />
     </main>
